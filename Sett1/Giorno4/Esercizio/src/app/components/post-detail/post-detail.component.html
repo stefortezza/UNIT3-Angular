@@ -1,0 +1,10 @@
+<h3 class="text-center"> Dettagli</h3>
+<div *ngIf="post" class="card my-2">
+    <div class="card-header">
+      {{ post.tags.join(", ") }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ post.title }}</h5>
+      <p class="card-text">{{ post.body }}</p>
+    </div>
+  </div>
