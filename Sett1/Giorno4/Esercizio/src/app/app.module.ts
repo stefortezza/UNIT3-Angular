@@ -10,11 +10,10 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { Error404Component } from './components/error404/error404.component';
 
-
 const routes: Route[] = [
   {
     path: '',
-    component: AppComponent,
+    component: HomepageComponent,
   },
   {
     path: 'active',
@@ -25,8 +24,8 @@ const routes: Route[] = [
     component: InactivePostsComponent,
   },
   {
-    path: 'post',
-    component: PostDetailComponent,
+    path: "post/:id",
+    component: PostDetailComponent
   },
   {
     path:"**",
@@ -44,7 +43,11 @@ const routes: Route[] = [
     PostDetailComponent,
     Error404Component,
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(routes)
+  ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })
