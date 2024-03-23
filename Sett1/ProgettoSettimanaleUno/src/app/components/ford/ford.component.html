@@ -8,7 +8,7 @@
     </div>
     <div class="row my-4">
       <div
-        class="col-12 d-flex justify-content-center my-2"
+        class="col-4 d-flex justify-content-center my-2"
         *ngFor="let car of Ford"
       >
         <span *ngIf="car.available">
@@ -24,7 +24,7 @@
                     Anno: {{ car.year }}
                 </p>
                 <p class="card-text badge bg-success text-white me-1">
-                    Prezzo: € {{ car.price }}&euro;
+                    Prezzo: € {{ car.price }}
                 </p>
                 <p class="card-text badge bg-success text-white">Disponibile</p>
               </div>
@@ -44,7 +44,7 @@
                     Anno: {{ car.year }}
                 </p>
                 <p class="card-text badge bg-danger text-black me-1">
-                    Prezzo: € {{ car.price }}&euro;
+                    Prezzo: € {{ car.price }}
                 </p>
                 <p class="card-text badge bg-danger text-black">
                   Non disponibile

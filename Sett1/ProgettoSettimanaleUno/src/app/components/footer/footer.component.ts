@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-
+  togglePanel(): void {
+    const panel = document.getElementById('panel');
+    if (panel) {
+      panel.style.display = (panel.style.display === 'none') ? 'block' : 'none';
+    }
+  }
 }

@@ -33,18 +33,22 @@ export class FiatComponent{
     }
     this.selectRandomCars();
   }
-
   selectRandomCars(): void {
-    if (this.Fiat.length >= 2) {
-      const index1 = Math.floor(Math.random() * this.Fiat.length);
-      let index2 = Math.floor(Math.random() * this.Fiat.length);
-      while (index2 === index1) {
-        index2 = Math.floor(Math.random() * this.Fiat.length);
+    if (this.Fiat.length >= 3) {
+      const indices: number[] = [];
+      while (indices.length < 3) {
+        const index = Math.floor(Math.random() * this.Fiat.length);
+        if (!indices.includes(index)) {
+          indices.push(index);
+        }
       }
-      this.Fiat = [
-        this.Fiat[index1],
-        this.Fiat[index2],
+      const selectedCars = [
+        this.Fiat[indices[0]],
+        this.Fiat[indices[1]],
+        this.Fiat[indices[2]],
       ];
+      this.Fiat = selectedCars;
     }
   }
+  
 }

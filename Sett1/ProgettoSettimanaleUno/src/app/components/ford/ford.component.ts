@@ -35,16 +35,20 @@ export class FordComponent {
   }
 
   selectRandomCars(): void {
-    if (this.Ford.length >= 2) {
-      const index1 = Math.floor(Math.random() * this.Ford.length);
-      let index2 = Math.floor(Math.random() * this.Ford.length);
-      while (index2 === index1) {
-        index2 = Math.floor(Math.random() * this.Ford.length);
+    if (this.Ford.length >= 3) {
+      const indices: number[] = [];
+      while (indices.length < 3) {
+        const index = Math.floor(Math.random() * this.Ford.length);
+        if (!indices.includes(index)) {
+          indices.push(index);
+        }
       }
-      this.Ford = [
-        this.Ford[index1],
-        this.Ford[index2],
+      const selectedCars = [
+        this.Ford[indices[0]],
+        this.Ford[indices[1]],
+        this.Ford[indices[2]],
       ];
+      this.Ford = selectedCars;
     }
   }
 }

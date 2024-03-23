@@ -1,14 +1,11 @@
 <div class="container">
   <div class="text-center">
-    <img
-      src="assets/img/Fiat.png"
-      style="width: 15%"
-    />
+    <img src="assets/img/Fiat.png" style="width: 15%" />
     <h3 class="display-4 fw-semibold m-0">Le nostre auto Fiat</h3>
   </div>
   <div class="row my-4">
     <div
-      class="col-12 d-flex justify-content-center my-2"
+      class="col-4 d-flex justify-content-center"
       *ngFor="let car of Fiat"
     >
       <span *ngIf="car.available">
@@ -21,10 +18,10 @@
             <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
             <div>
               <p class="card-text badge bg-success text-white me-1">
-                  Anno: {{ car.year }}
+                Anno: {{ car.year }}
               </p>
               <p class="card-text badge bg-success text-white me-1">
-                  Prezzo: € {{ car.price }}&euro;
+                Prezzo: € {{ car.price }}
               </p>
               <p class="card-text badge bg-success text-white">Disponibile</p>
             </div>
@@ -41,10 +38,10 @@
             <h5 class="card-title">{{ car.brand }} {{ car.model }}</h5>
             <div>
               <p class="card-text badge bg-danger text-black me-1">
-                  Anno: {{ car.year }}
+                Anno: {{ car.year }}
               </p>
               <p class="card-text badge bg-danger text-black me-1">
-                  Prezzo: € {{ car.price }}&euro;
+                Prezzo: € {{ car.price }}
               </p>
               <p class="card-text badge bg-danger text-black">
                 Non disponibile

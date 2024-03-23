@@ -35,16 +35,20 @@ export class AudiComponent {
   }
 
   selectRandomCars(): void {
-    if (this.Audi.length >= 2) {
-      const index1 = Math.floor(Math.random() * this.Audi.length);
-      let index2 = Math.floor(Math.random() * this.Audi.length);
-      while (index2 === index1) {
-        index2 = Math.floor(Math.random() * this.Audi.length);
+    if (this.Audi.length >= 3) {
+      const indices: number[] = [];
+      while (indices.length < 3) {
+        const index = Math.floor(Math.random() * this.Audi.length);
+        if (!indices.includes(index)) {
+          indices.push(index);
+        }
       }
-      this.Audi = [
-        this.Audi[index1],
-        this.Audi[index2],
+      const selectedCars = [
+        this.Audi[indices[0]],
+        this.Audi[indices[1]],
+        this.Audi[indices[2]],
       ];
+      this.Audi = selectedCars;
     }
   }
 }
